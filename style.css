@@ -1,118 +1,208 @@
 *{
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    list-style: none;
+    font-family: "montserrat", sans-serif;
+    margin: 0px;
+    padding: 0px;
     box-sizing: border-box;
 }
+
 body{
-    font-family: montserrat;
+    background-color: #acd0d4;
 }
-nav{
-background: #0082e6;
-height: 80px;
-width: 100%;
+
+.container{
+    margin: auto;
+    display: grid;
+    grid-template-columns: 0.33fr 1fr;
+    width: 210mm;
+    height: 250mm;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
 }
-label.logo{
-    color: white;
-    font-size: 35px;
-    line-height: 80px;
-    padding: 0 100px;
+
+.container .card-one {
+    padding: 40px 20px;
+    padding-left: 35px;
+    background-color: #d1d1d1;
+    width: 100%;
+    color: #313131;
+}
+
+.container .card-one .profile {
+    display: inline-flex;
+    margin-bottom: 5px;
+    margin-left: -15px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 4px solid #2c2b29;
+    background-image: url("img.jpg");
+    background-position: center top;
+    background-size: 100%;
+}
+
+.container .card-one .contect-box { 
+    margin-top: 10px;
+}
+
+.container .card-one .contect-box>* {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    margin-top: 25px;
+    align-items: center;
+}
+
+.container .card-one .contect-box>* .text {
+    display: inline-flex;
+    word-break: break-all;
+}
+
+.container .card-one .personal-box {
+    margin-top: 35px;
+}
+
+.container .card-one .personal-box .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #313131;
+    border-radius: 50%;
+    margin-left: 4px;
+}
+
+.container .card-one .personal-box .dot.active {
+    background-color: #b89258 ;
+} 
+
+.container .card-one .hobbies-box {
+    margin-top: 35px;
+}
+
+.container .card-one .hobbies-box .logo {
+    margin: 10px 0px;
+    display: grid;
+    grid-template: 1fr 1fr/1fr 1fr;
+    font-size: 2.8em;
+    grid-row-gap: 15px;
+}
+
+.container .card-two {
+    background-color: #173c62;
+    padding: 40px 20px;
+    padding-right: 75px;
+    color: #b5b5b4;
+}
+
+.container .card-two .head-title {
+    font-size: 2.1em;
+    color: #b89258;
+    font-weight: 400;
+}
+ 
+.container .card-two .box {
+    display: inline-block;
+    padding: 2px 70px 2px 20px;
+    margin-left: -20px;
+    margin-top: 35px;
+    background-color: #b89258;
+    color: #2c2b29;
+}
+
+.container .card-two .group-1 .desc {
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+.container .card-two .group-2 .desc {
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+.container .card-two .group-2 .desc ul {
+    position: relative;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.container .card-two .group-2 .desc ul::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: -22px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #b89258;
+}
+
+.container .card-two .group-2 .desc ul li {
+    list-style-type: none;
+    position: relative;
+}
+
+.container .card-two .group-2 .desc ul li::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: -18px;
+    height: 50px;
+    border-left: 2px solid #b89258;
+}
+
+.container .card-two .group-2 .desc ul:last-of-type li::before {
+    content: none;
+}
+
+.container .card-two .group-2 .desc ul li div:last-of-type {
+    color: #b89258;
     font-weight: bold;
 }
-nav ul{
-    float: right;
-    margin-right: 20px;
-}
-nav ul li{
-display: inline-block;
-line-height: 80px;
-margin: 0 5px;
-}
-nav ul li a{
-    color: white;
-    font-size: 17px;
-    padding: 7px 13px;
-    border-radius: 3px;
-    text-transform: uppercase;
-}
-a.active,a:hover{
-background: #1b9bff;
-transition: .5s;
-}
-.checkbtn{
-    font-size: 30px;
-    color: white;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
-    cursor: pointer;
-    display: none;
-}
-#check{
-    display: none;
-}
-/* HERO */
-section#hero {
-    height: calc(85vh - 60px);
-    display: flex;
-    flex-direction:  column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
+
+.container .card-two .group-3 .desc {
+    margin-top: 15px;
+    margin-left: 20px;
 }
 
-#hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-@media (max-width: 952px){
-    label.logo{
-        font-size: 30px;
-        padding-left: 50px;
-    }
-    nav ul li a{
-        font-size: 16px; 
-    }
-}
-@media (max-width: 858px){
-    .checkbtn{
-        display: block;
-    }
-    ul{
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: #0a0a0a;
-        top: 80px;
-        left: -100% ;
-        text-align: center;
-        transition: all .5s;
-    }
-    nav ul li{
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
-    }
-    nav ul li a{
-        font-size: 20px;
-    }
-     a:hover,a.active{
-        background: none;
-        color:#0082e6;
-     } 
-     #check:checked ~ ul{
-        left: 0;
-     }
-}
-section{
-    background: url(bg1.jpg) no-repeat;
-    background-size:  cover;
-    height: calc(100vh - 80px)
+.container .card-two .group-3 .desc ul {
+    position: relative;
+    margin-top: 20px;
+    margin-left: 5px;
 }
 
+.container .card-two .group-3 .desc ul::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: -22px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    background-color: #b89258;
+}
 
+.container .card-two .group-3 .desc ul li {
+    list-style-type: none;
+    position: relative;
+}
 
+.container .card-two .group-3 .desc ul li::before {
+    content: "";
+    position: absolute;
+    border-left: 2px solid #b89258;
+}
 
+.container .card-two .group-3 ul li div:nth-child(2) {
+    color: #b89258;
+    font-weight: bold;
+}
 
+@media print {
+    @page {
+        margin: 0;
+        size: A4;
+    }
+
+    *{
+        -webkit-print-color-adjust: exact;
+    }
+}
